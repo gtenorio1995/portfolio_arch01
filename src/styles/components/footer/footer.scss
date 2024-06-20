@@ -1,0 +1,64 @@
+@use '../../config/colors.scss';
+@use 'sass:math';
+
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+footer {
+    width: 100%;
+
+    >.container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: converter(100) 0;
+        row-gap: converter(60);
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            row-gap: converter(24);
+
+            >strong {
+                color: colors.$vermelho;
+                font-size: converter(20);
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                row-gap: converter(12);
+
+                a {
+                    color: colors.$preto;
+                    line-height: converter(24);
+
+                    &:hover {
+                        color: colors.$vermelho-escuro;
+                    }
+                }
+            }
+        }
+
+        .copy {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+
+            .redes {
+                display: flex;
+                column-gap: converter(16);
+
+                >img {
+                    height: converter(24);
+                    transition: 0.4s;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+}

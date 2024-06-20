@@ -1,0 +1,44 @@
+@use '../../config/colors.scss';
+@use 'sass:math';
+
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+#ballons {
+    width: 100%;
+    display: flex;
+    column-gap: converter(20);
+
+    .ballon {
+        background-color: colors.$cinza;
+        padding: converter(170) converter(40);
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: converter(40);
+        text-align: center;
+
+        &:nth-child(1) {
+            border-top-right-radius: 100%;
+            border-bottom-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+        }
+
+        &:nth-child(2) {
+            border-top-right-radius: 100%;
+            border-top-left-radius: 100%;
+            border-bottom-left-radius: 100%;
+        }
+
+        p {
+            color: colors.$vermelho-escuro;
+            font-weight: 700;
+        }
+
+        >span {
+            color: colors.$vermelho;
+            font-weight: 400;
+        }
+    }
+}

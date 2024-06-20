@@ -1,0 +1,22 @@
+@use '../../config/colors.scss';
+@use 'sass:math';
+
+@use './sec-message.scss';
+@use './sec-gallery.scss';
+@use './sec-ballon.scss';
+@use './sec-contact.scss';
+
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+main {
+    width: 100%;
+
+    >.container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+}

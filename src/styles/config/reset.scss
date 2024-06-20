@@ -1,0 +1,68 @@
+@use './colors.scss';
+@use 'sass:math';
+
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100dvw;
+    height: 100dvh;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    transition: 0.4s;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+section {
+    padding: converter(50) 0;
+}
+
+h1 {
+    font-size: converter(60);
+    line-height: converter(72);
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    font-size: converter(16);
+    line-height: converter(24);
+}
+
+img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}

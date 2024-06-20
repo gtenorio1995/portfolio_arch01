@@ -1,0 +1,41 @@
+@use '../../config/colors.scss';
+@use 'sass:math';
+
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+#gallery {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: converter(40);
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        row-gap: converter(32);
+        height: 350px;
+
+        >img {
+            border-radius: converter(40);
+            transition: 0.4s;
+        }
+
+        .text-card {
+            display: flex;
+            flex-direction: column;
+            row-gap: converter(12);
+
+            h3 {
+                font-family: 'Poppins', sans-serif;
+                font-size: converter(20);
+                font-weight: 700;
+            }
+
+            >p {
+                color: colors.$preto-verde;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@use '../../config/colors.scss';
+@use 'sass:math';
+
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+#message {
+    display: flex;
+    width: 100%;
+    column-gap: converter(40);
+    align-items: center;
+
+    h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: converter(48);
+        font-weight: 600;
+        width: 50%;
+    }
+
+    p {
+        width: 50%;
+        font-size: converter(20);
+        color: colors.$vermelho-escuro;
+    }
+}

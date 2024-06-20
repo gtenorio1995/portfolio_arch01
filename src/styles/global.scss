@@ -1,0 +1,16 @@
+@use './config/reset.scss';
+@use './config/colors.scss';
+@use 'sass:math';
+
+@use './components/header/header.scss';
+@use './components/main/main.scss';
+@use './components/footer/footer.scss';
+
+@function converter($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+}
