@@ -5,22 +5,56 @@
     @return math.div($px, 16) * 1rem;
 }
 
-#message {
-    display: flex;
-    width: 100%;
-    column-gap: converter(40);
-    align-items: center;
+@media screen and (min-width: 320px) {
+    #message {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: converter(60) converter(20);
+        row-gap: converter(20);
+        justify-items: center;
 
-    h2 {
-        font-family: 'Poppins', sans-serif;
-        font-size: converter(48);
-        font-weight: 600;
-        width: 50%;
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: converter(40);
+            font-weight: 600;
+        }
+
+        p {
+            font-size: converter(20);
+            line-height: converter(24);
+            color: colors.$vermelho-escuro;
+        }
     }
+}
 
-    p {
-        width: 50%;
-        font-size: converter(20);
-        color: colors.$vermelho-escuro;
+@media screen and (min-width: 810px) {
+    #message {
+        padding: converter(50) converter(40);
+        row-gap: converter(40);
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+
+    #message {
+        display: flex;
+        width: 100%;
+        column-gap: converter(40);
+        align-items: center;
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: converter(48);
+            font-weight: 600;
+            width: 50%;
+        }
+
+        p {
+            width: 50%;
+            font-size: converter(20);
+            color: colors.$vermelho-escuro;
+        }
     }
 }

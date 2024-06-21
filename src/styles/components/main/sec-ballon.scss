@@ -5,40 +5,114 @@
     @return math.div($px, 16) * 1rem;
 }
 
-#ballons {
-    width: 100%;
-    display: flex;
-    column-gap: converter(20);
+@media screen and (min-width: 320px) {
+    #ballons {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: converter(20);
+        padding: converter(20);
 
-    .ballon {
-        background-color: colors.$cinza;
-        padding: converter(170) converter(40);
-        width: 50%;
+        .ballon {
+            background-color: colors.$cinza;
+            padding: converter(40);
+            display: flex;
+            flex-direction: column;
+            gap: converter(40);
+            text-align: center;
+
+            &:nth-child(1) {
+                border-top-right-radius: 50%;
+                border-bottom-right-radius: 50%;
+                border-bottom-left-radius: 50%;
+            }
+
+            &:nth-child(2) {
+                border-top-right-radius: 50%;
+                border-top-left-radius: 50%;
+                border-bottom-left-radius: 50%;
+            }
+
+            p {
+                color: colors.$vermelho-escuro;
+                font-weight: 700;
+                text-align: center;
+                width: 90%;
+            }
+
+            >span {
+                color: colors.$vermelho;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 810px) {
+    #ballons {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: converter(20);
+        padding: converter(20);
+
+        .ballon {
+            background-color: colors.$cinza;
+            padding: converter(100) converter(40);
+            justify-content: center;
+            align-items: center;
+
+            &:nth-child(1) {
+                border-top-right-radius: 100%;
+                border-bottom-right-radius: 100%;
+                border-bottom-left-radius: 100%;
+            }
+
+            &:nth-child(2) {
+                border-top-right-radius: 100%;
+                border-top-left-radius: 100%;
+                border-bottom-left-radius: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #ballons {
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        gap: converter(40);
-        text-align: center;
+        column-gap: converter(20);
 
-        &:nth-child(1) {
-            border-top-right-radius: 100%;
-            border-bottom-right-radius: 100%;
-            border-bottom-left-radius: 100%;
-        }
+        .ballon {
+            background-color: colors.$cinza;
+            padding: converter(170) converter(40);
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: converter(40);
+            text-align: center;
 
-        &:nth-child(2) {
-            border-top-right-radius: 100%;
-            border-top-left-radius: 100%;
-            border-bottom-left-radius: 100%;
-        }
+            &:nth-child(1) {
+                border-top-right-radius: 100%;
+                border-bottom-right-radius: 100%;
+                border-bottom-left-radius: 100%;
+            }
 
-        p {
-            color: colors.$vermelho-escuro;
-            font-weight: 700;
-        }
+            &:nth-child(2) {
+                border-top-right-radius: 100%;
+                border-top-left-radius: 100%;
+                border-bottom-left-radius: 100%;
+            }
 
-        >span {
-            color: colors.$vermelho;
-            font-weight: 400;
+            p {
+                color: colors.$vermelho-escuro;
+                font-weight: 700;
+            }
+
+            >span {
+                color: colors.$vermelho;
+                font-weight: 400;
+            }
         }
     }
 }

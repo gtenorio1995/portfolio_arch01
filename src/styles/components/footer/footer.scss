@@ -5,57 +5,132 @@
     @return math.div($px, 16) * 1rem;
 }
 
-footer {
-    width: 100%;
+@media screen and (min-width: 320px) {
+    footer {
+        >.container {
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: converter(60) converter(20);
+            row-gap: converter(40);
 
-    >.container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding: converter(100) 0;
-        row-gap: converter(60);
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            row-gap: converter(24);
-
-            >strong {
-                color: colors.$vermelho;
-                font-size: converter(20);
-            }
-
-            ul {
+            .footer-links {
                 display: flex;
                 flex-direction: column;
-                row-gap: converter(12);
+                row-gap: converter(24);
 
-                a {
-                    color: colors.$preto;
-                    line-height: converter(24);
+                >strong {
+                    color: colors.$vermelho;
+                    font-size: converter(20);
+                }
 
-                    &:hover {
-                        color: colors.$vermelho-escuro;
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: converter(12);
+
+                    a {
+                        color: colors.$preto;
+                        line-height: converter(24);
+
+                        &:hover {
+                            color: colors.$vermelho-escuro;
+                        }
+                    }
+                }
+            }
+
+            .copy {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                justify-items: center;
+                text-align: center;
+                gap: converter(20);
+
+                .redes {
+                    display: flex;
+                    column-gap: converter(16);
+
+                    >img {
+                        width: converter(24);
+                        height: converter(24);
+                        transition: 0.4s;
+                        cursor: pointer;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
                     }
                 }
             }
         }
+    }
+}
 
-        .copy {
-            grid-column: 1 / -1;
-            display: flex;
-            justify-content: space-between;
+@media screen and (min-width: 810px) {
+    footer {
+        >.container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: converter(60) converter(40);
+            justify-items: center;
+        }
+    }
+}
 
-            .redes {
+@media screen and (min-width: 1200px) {
+    footer {
+        width: 100%;
+
+        >.container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: converter(100) 0;
+            row-gap: converter(60);
+
+            .footer-links {
                 display: flex;
-                column-gap: converter(16);
+                flex-direction: column;
+                row-gap: converter(24);
 
-                >img {
-                    height: converter(24);
-                    transition: 0.4s;
-                    cursor: pointer;
+                >strong {
+                    color: colors.$vermelho;
+                    font-size: converter(20);
+                }
 
-                    &:hover {
-                        transform: scale(1.2);
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: converter(12);
+
+                    a {
+                        color: colors.$preto;
+                        line-height: converter(24);
+
+                        &:hover {
+                            color: colors.$vermelho-escuro;
+                        }
+                    }
+                }
+            }
+
+            .copy {
+                grid-column: 1 / -1;
+                display: flex;
+                justify-content: space-between;
+
+                .redes {
+                    display: flex;
+                    column-gap: converter(16);
+
+                    >img {
+                        height: converter(24);
+                        transition: 0.4s;
+                        cursor: pointer;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
                     }
                 }
             }

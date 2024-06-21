@@ -5,36 +5,85 @@
     @return math.div($px, 16) * 1rem;
 }
 
-#gallery {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: converter(40);
+@media screen and (min-width: 320px) {
+    #gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: converter(40);
+        padding: converter(20) converter(20);
 
-    .card {
-        display: flex;
-        flex-direction: column;
-        row-gap: converter(32);
-        height: 350px;
-
-        >img {
-            border-radius: converter(40);
-            transition: 0.4s;
-        }
-
-        .text-card {
+        .card {
             display: flex;
             flex-direction: column;
-            row-gap: converter(12);
+            row-gap: converter(20);
+            height: 350px;
 
-            h3 {
-                font-family: 'Poppins', sans-serif;
-                font-size: converter(20);
-                font-weight: 700;
+            >img {
+                border-radius: converter(40);
+                transition: 0.4s;
             }
 
-            >p {
-                color: colors.$preto-verde;
+            .text-card {
+                display: flex;
+                flex-direction: column;
+                row-gap: converter(12);
+
+                h3 {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: converter(20);
+                    font-weight: 700;
+                }
+
+                >p {
+                    color: colors.$preto-verde;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 810px) {
+    #gallery {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: converter(40);
+        padding: converter(40);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #gallery {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: converter(40);
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            row-gap: converter(32);
+            height: 350px;
+
+            >img {
+                border-radius: converter(40);
+                transition: 0.4s;
+            }
+
+            .text-card {
+                display: flex;
+                flex-direction: column;
+                row-gap: converter(12);
+
+                h3 {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: converter(20);
+                    font-weight: 700;
+                }
+
+                >p {
+                    color: colors.$preto-verde;
+                }
             }
         }
     }
